@@ -9,8 +9,10 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    fluidPage(
-      h1("Anovas")
+    htmlTemplate(
+      app_sys("app/www/test.html"),
+      first = tags$img(src = "www/logo-neper.png"),
+      second = fileInput("upload","", FALSE, accept = c(".csv", ".tsv"), 200,icon("upload"), placeholder = "... csv / ... xls"),
     )
   )
 }
